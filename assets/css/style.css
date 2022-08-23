@@ -1,0 +1,300 @@
+/* You can also use arrow keys to cycle between scroll snap containers */
+
+h2 {
+    text-align: center;
+}
+
+p {
+    color: #ffff;
+}
+
+html,
+body {
+    scroll-snap-type: y mandatory;
+}
+
+.container-1 {
+    background-image: url('./images/bg-1.jpg');
+    color: #ffff;
+}
+
+.container-2 {
+    background: url('./images/bg-3.jpg') center center no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.container-3 {
+    background: url(./images/bg-7.jpg) center center no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.container-4 {
+    background: url(./images/bg-8.jpg);
+}
+
+.container-1,
+.container-2,
+.container-3,
+.container-4 {
+    scroll-snap-align: start;
+    background-size: cover;
+    height: 100vh;
+    width: 100%;
+    font-family: 'Fredoka', sans-serif;
+}
+
+.center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.main {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas: 'title title' 'desc desc' 'socmed socmed';
+    padding: 300px 0px 0px 75px;
+    font-family: 'Fredoka', sans-serif;
+}
+
+.title {
+    grid-area: title;
+    text-shadow: 5px 7px 10px black;
+    font-size: 80px;
+}
+
+.desc {
+    grid-area: desc;
+    text-shadow: 5px 7px 10px black;
+    font-size: 20px;
+    padding-top: 70px;
+    padding-left: 95px;
+}
+
+.socmed {
+    grid-area: socmed;
+    padding-top: 50px;
+    padding-left: 105px;
+    font-size: 24px;
+}
+
+.name {
+    grid-area: name;
+    font-family: 'League Gothic', sans-serif;
+    font-size: 45px;
+}
+
+.price {
+    grid-area: price;
+    text-shadow: 5px 7px 10px black;
+    color: #ffff;
+    font-family: 'Roboto Slab', serif;
+    font-size: 35px;
+}
+
+.btn {
+    grid-area: btn;
+    background: rgb(238, 238, 236);
+    background: linear-gradient(180deg, rgba(238, 238, 236, 1) 0%, rgba(179, 178, 160, 1) 100%);
+    padding: 10px;
+    border-radius: 30px;
+    box-shadow: 0px 5px 10px gray;
+}
+
+.card {
+    height: 450px;
+    width: 300px;
+    position: absolute;
+    transform-style: preserve-3d;
+    transition: all 300ms ease;
+}
+
+.card:hover {
+    transform: rotateY(180deg);
+}
+
+.content {
+    display: grid;
+    grid-template-rows: 6fr 1fr 1fr;
+    grid-template-areas: 'name' 'price' 'btn';
+    grid-gap: 10px;
+    border-radius: 20px;
+    color: black;
+    padding: 20px;
+}
+
+.front-1 {
+    background: url(./images/pesto.jpg);
+    background-size: cover;
+}
+
+.front-2 {
+    background: url(./images/grilled-cheese.jpeg);
+    background-size: cover;
+}
+
+.front-3 {
+    background: url(./images/salted-egg.jpg);
+    background-size: cover;
+}
+
+.back-1 {
+    background: url(./images/pesto-back.jpg);
+    background-size: cover;
+    backface-visibility: hidden;
+    transform: rotateY(180deg);
+    font-size: 25px;
+}
+
+.back-2 {
+    background: url(./images/grilled-cheese-back.jpg);
+    background-size: cover;
+    backface-visibility: hidden;
+    transform: rotateY(180deg);
+    font-size: 25px;
+}
+
+.back-3 {
+    background: url(./images/salted-egg-back.jpg);
+    background-size: cover;
+    backface-visibility: hidden;
+    transform: rotateY(180deg);
+    font-size: 30px;
+}
+
+.front-1-1 {
+    background: url(./images/french-vanilla.jpg);
+    background-size: cover;
+}
+
+.front-2-2 {
+    background: url(./images/matcha.jpg);
+    background-size: cover;
+}
+
+.front-3-3 {
+    background: url(./images/saleted-crml.jpg);
+    background-size: cover;
+}
+
+.back-1-1 {
+    background: url(./images/french-vanilla-back.jpg);
+    background-size: cover;
+    backface-visibility: hidden;
+    transform: rotateY(180deg);
+    font-size: 25px;
+}
+
+.back-2-2 {
+    background: url(./images/matcha-back.jpg);
+    background-size: cover;
+    backface-visibility: hidden;
+    transform: rotateY(180deg);
+    font-size: 25px;
+}
+
+.back-3-3 {
+    background: url(./images/saleted-crml-back.jpg);
+    background-size: cover;
+    backface-visibility: hidden;
+    transform: rotateY(180deg);
+    font-size: 25px;
+}
+
+.front-1,
+.front-2,
+.front-3,
+.front-1-1,
+.front-2-2,
+.front-3-3,
+.back-1,
+.back-2,
+.back-3,
+.back-1-1,
+.back-2-2,
+.back-3-3 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 20px;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    backface-visibility: hidden;
+    text-align: center;
+    box-shadow: 2px 0px 30px 1px grey;
+    color: #ffff;
+}
+
+.products {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-auto-rows: auto;
+    grid-template-areas: 'head head head''prod-1 prod-2 prod-3';
+    grid-gap: 50px;
+    padding: 0px 50px 0px 50px;
+}
+
+.head {
+    grid-area: head;
+    font-family: 'Roboto Slab', serif;
+    text-shadow: 5px 7px 10px black;
+    font-size: 40px;
+    color: #ffff;
+}
+
+.prod-1 {
+    grid-area: prod-1;
+}
+
+.prod-2 {
+    grid-area: prod-2;
+}
+
+.prod-3 {
+    grid-area: prod-3;
+}
+
+.prod-1,
+.prod-2,
+.prod-3 {
+    position: relative;
+    height: 400px;
+    width: 300px;
+}
+
+.about {
+    display: grid;
+    grid-template-columns: 1fr 0.5fr 1fr;
+    grid-template-rows: auto;
+    grid-template-areas: 'pic-1 about-head pic-2' 'pic-1 deets pic-2';
+}
+
+.pic-1 {
+    grid-area: pic-1;
+    padding: 0px 0px 50px 80px;
+}
+
+.pic-2 {
+    grid-area: pic-2;
+    padding: 120px 0px 0px 0px;
+}
+
+.about-head {
+    grid-area: about-head;
+    font-family: 'Roboto Slab', serif;
+    font-size: 50px;
+    padding-top: 70px;
+}
+
+.deets {
+    grid-area: deets;
+    text-align: center;
+    padding-right: 50px;
+    font-size: 20px;
+    color: #ffff;
+}
